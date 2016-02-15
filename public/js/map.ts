@@ -1,6 +1,10 @@
 /// <reference path="../../typings/microsoft.maps.d.ts" />
 
 class Map {
+    
+    //Default vars
+    private lngOffset = 2;
+    private latOffset = 0.5; 
      
     // Declare map, Infobox, & pin
     private myMap;
@@ -8,7 +12,7 @@ class Map {
     private pushpin;
     
     // Locations
-    private aDefaultLngLat = [37.09024, -95.712891];
+    private aDefaultLngLat = [37.09024, -95.712891]; //Center of United States
     private aCenterLoc     = new Microsoft.Maps.Location(this.aDefaultLngLat[0], this.aDefaultLngLat[1]);
 
     private infoboxOptions = { width: 400, height: 250, showCloseButton: true, visible: false };
@@ -17,7 +21,8 @@ class Map {
     
     constructor() {
         
-        this.defaultInfobox = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(38.09024, -95.712891), this.infoboxOptions); // Put info box slight above pin
+        this.defaultInfobox = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(this.aDefaultLngLat[0] + this.lngOffset, 
+                                                         this.aDefaultLngLat[1] - this.latOffset), this.infoboxOptions); // Put info box slight above pin
         this.myMap          = new Microsoft.Maps.Map(document.getElementById('BingMap'), {
             credentials: this.bingAPIKey
         });

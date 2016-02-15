@@ -1,12 +1,15 @@
 /// <reference path="../../typings/microsoft.maps.d.ts" />
 var Map = (function () {
     function Map() {
+        //Default vars
+        this.lngOffset = 2;
+        this.latOffset = 0.5;
         // Locations
-        this.aDefaultLngLat = [37.09024, -95.712891];
+        this.aDefaultLngLat = [37.09024, -95.712891]; //Center of United States
         this.aCenterLoc = new Microsoft.Maps.Location(this.aDefaultLngLat[0], this.aDefaultLngLat[1]);
         this.infoboxOptions = { width: 400, height: 250, showCloseButton: true, visible: false };
         this.bingAPIKey = 'Ah1_aJohnC76ttqxM-PjSm5rsabmFcLSOujmuYvfSmKSHAOk9Xm2X2E6AtCQBNPk';
-        this.defaultInfobox = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(38.09024, -95.712891), this.infoboxOptions); // Put info box slight above pin
+        this.defaultInfobox = new Microsoft.Maps.Infobox(new Microsoft.Maps.Location(this.aDefaultLngLat[0] + this.lngOffset, this.aDefaultLngLat[1] - this.latOffset), this.infoboxOptions); // Put info box slight above pin
         this.myMap = new Microsoft.Maps.Map(document.getElementById('BingMap'), {
             credentials: this.bingAPIKey
         });
