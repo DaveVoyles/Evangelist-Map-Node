@@ -13,7 +13,8 @@ var Map = (function () {
         this.pushpin = new Microsoft.Maps.Pushpin(this.aCenterLoc);
         // Center map on the United States   
         this.myMap.setView({ zoom: 5, center: this.aCenterLoc });
-        this.setInfoboxContent("Dave", "Philadelphia", "Games", "I am a person!", "http://www.twitter.com/DaveVoyles", "www.DaveVoyles.com", "https://www.google.com/imgres?imgurl=http://www.shawnee.edu/game-conference/img/David-Voyles.jpg&imgrefurl=http://www.shawnee.edu/game-conference/&h=320&w=320&tbnid=nbmS3Ix4lGQWeM:&docid=T2WMgVqAREbcIM&ei=vP_BVrKuIIWe-gGkrJaAAw&tbm=isch&ved=0ahUKEwiy_OmDm_rKAhUFjz4KHSSWBTAQMwgfKAIwAg");
+        var image = "http://www.shawnee.edu/game-conference/img/David-Voyles.jpg";
+        this.setInfoboxContent("Dave", "Philadelphia", "Games", "I am a person!", "http://www.twitter.com/DaveVoyles", "www.DaveVoyles.com", image);
         // Create pin and infobox
         this.myMap.entities.clear();
         this.myMap.entities.push(this.pushpin);
