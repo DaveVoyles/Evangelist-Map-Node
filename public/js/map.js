@@ -51,6 +51,9 @@ var Map = (function () {
             '<img src=' + img + ' class = "evangelist-img">' +
             '</div><!-- .bio-container -->');
     };
+    Map.prototype.SelectAll = function (callback) {
+        $.getJSON("api/customers", callback);
+    };
     return Map;
 })();
 ;

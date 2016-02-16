@@ -1,4 +1,6 @@
 /// <reference path="../../typings/microsoft.maps.d.ts" />
+//  <reference path="../typings/jquery/jquery.d.ts" />
+
 
 class Map {
     
@@ -76,6 +78,13 @@ class Map {
             '</div><!-- .bio-container -->'
         )
     }
+    
+    
+    
+    SelectAll(callback: any) {
+        $.getJSON("api/customers", callback);
+    }
+        
     
              
 };
