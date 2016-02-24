@@ -1,5 +1,5 @@
 /// <reference path="../../typings/microsoft.maps.d.ts" />
-//  <reference path="../typings/jquery/jquery.d.ts" />
+/// <reference path="../../typings/main/ambient/jquery/jquery.d.ts" />
 
 
 class Map {
